@@ -10,7 +10,7 @@ img_url: /images/
 
 # duoshuo comments
 duoshuo_comments: true
-duoshuo_short_name: nipengadmaster
+duoshuo_short_name: nipengmath
 
 # Owner/author information
 owner:
@@ -21,7 +21,7 @@ owner:
   # Social networking links used in footer. Update and remove as you like.
   twitter:
   facebook:
-  github:   nipengadmaster
+  github:   nipengmath
   weiboid: feiinniao
   weiboname: Peng_Ni
   stackexchange:
