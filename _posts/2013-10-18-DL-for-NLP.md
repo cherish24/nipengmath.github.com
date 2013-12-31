@@ -1,6 +1,7 @@
 ---
 layout: post
 category : 笔记
+comments: true
 tags : [DL, NLP]
 ---
 {% include JB/setup %}

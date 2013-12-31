@@ -1,6 +1,7 @@
 ---
 layout: post
 category : 笔记
+comments: true
 tags : [Java]
 ---
 {% include JB/setup %}
@@ -22,7 +23,7 @@ tags : [Java]
 
 		class Dog{}
 		class DogTestDrive{}
-		
+
 9. java主动管理内存
 10. 全局变量：任何变量只要加上public，static, final，基本上都会变成全局变量取用的常数。
 11. 数量庞大的个别文件，可以pkzip存档为Java Archive-.jar文件。在jar文件中可以引入一个简单的文件，manifest，里面定义jar中哪个文件带有应用程序的main()方法。
@@ -34,9 +35,9 @@ tags : [Java]
 17. primitive主数据类型：
 
 		布尔：boolean true/false
-		char: 16 bits 
+		char: 16 bits
 		整型：byte（8位二进制）short(16位) int(32位) long（64位）
-		浮点：float(32位) double(64位)  
+		浮点：float(32位) double(64位)
 18. float f = 32.5f;除非加上"f"，否则小数都会被java当作double处理。
 19. 确保变量能存下保存的值。
 20. 命名规则：
@@ -55,11 +56,11 @@ tags : [Java]
 30. 实例变量永远都有默认值:整数0，浮点0.0，布尔false，引用变量null
 31. null表示没有操作对象的远程控制，是引用不是对象
 32. 实例变量声明在类内，而不是方法内。局部变量声明在方法中。局部变量在使用前必须初始化，没有默认值。
-33. equals和==的区别 
+33. equals和==的区别
 	* 当参数引用的对象与当前对象为同一对象时，“==“ 和 ”equals” 均为true。
 	* 如果两个对象的类型一致，并且内容一致，则“equals”返回true,这些类有：
 java.io.file,java.util.Date,java.lang.string,包装类（Integer,Double等）
-		
+
 			Animal  animal1=new Dog();
 			Animal  animal2=new  Cat();
 			Animal animal3=animal1;
@@ -67,7 +68,7 @@ java.io.file,java.util.Date,java.lang.string,包装类（Integer,Double等）
 			animal1.equals(animal2)  (false)
 		    animal1==animal3   (true)
 		    animal1.equals(animal3)   (true)
-			
+
 			Integer int1=new Integer(1);
 			Integer int2=new Integer(1);
 			String str1=new String("hello");
@@ -77,8 +78,8 @@ java.io.file,java.util.Date,java.lang.string,包装类（Integer,Double等）
 			str1==str2   (false)
 			str1.equals(str2)   (true)
 
-34. ArrayList.remove 
-		
+34. ArrayList.remove
+
 		remove(int index) 移除下标为index的元素，返回移除的元素。
 		remove(object o) 移除元素o,返回true/false
 35. 伪码--测试码--真实码
@@ -101,7 +102,7 @@ java.io.file,java.util.Date,java.lang.string,包装类（Integer,Double等）
 	* 逻辑运算不同：&&,||条件运算符;&，|无条件运算符。
 
     计算p1&&p2时,Java先计算p1,若p1为true再计算p2;若p1为false,则不再计算P2,因此&&又称为条件与运算符.而&的两个运算对象都要计算,所以,&又称为无条件与运算符.类似的还有 "|| " (条件或运算符,p1 || p2,Java先计算p1,若p1为FALSE再计算P2,若P1为TRUE,则不再计算P2)和 "| " (无条件运算符,两边对象都要计算) .
-  
+
     例如:(a <2)&(b-- <2) 保证(b-- <2)能被计算.这样,无论a是否小于2,变量b都要减1.
 
     要避免使用&和|运算符,它们好处不大.使用&和|运算符会使程序可读性降低,并且可能导致错误,比如:(x!=0)&(100/x)当x为0时产生运行错误,而(x!=0)&&(100/x)没问题
@@ -127,10 +128,10 @@ java.io.file,java.util.Date,java.lang.string,包装类（Integer,Double等）
 9. java只是由一堆类组成的。
 10. 多态性：发送消息给某个对象，让该对象自行决定响应何种行为。
     * 通过将子类对象引用赋值给超类对象引用变量来实现动态方法调用。
-    * java 的这种机制遵循一个原则：当超类对象引用变量引用子类对象时，**被引用对象的类型**而不是引用变量的类型决定了调用谁的成员方法，但是这个被调用的方法必须是在超类中定义过的，也就是说被子类覆盖的方法。 
+    * java 的这种机制遵循一个原则：当超类对象引用变量引用子类对象时，**被引用对象的类型**而不是引用变量的类型决定了调用谁的成员方法，但是这个被调用的方法必须是在超类中定义过的，也就是说被子类覆盖的方法。
 11. 方法的重写**Overriding**和重载**Overloading**是Java多态性的不同表现。重写Overriding是父类与子类之间多态性的一种表现，重载Overloading是一个类中多态性的一种表现。如果在子类中定义某方法与其父类有相同的名称和参数，我们说该方法被重写(Overriding)。子类的对象使用这个方法时，将调用子类中的定义，对它而言，父类中的定义如同被“屏蔽”了。如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称为方法的重载(Overloading)。Overloaded的方法是可以改变返回值的类型。
 12. 实际上这里涉及方法调用的优先问题 ，优先级由高到低依次为：
-    
+
         this.show(o) > super.show(o) >
         this.show((super)o) > super.show((super)o)
 13. 子类层次限制：一般不超过一，两层。也有例外，特别是GUI类这边。
@@ -164,7 +165,7 @@ java.io.file,java.util.Date,java.lang.string,包装类（Integer,Double等）
 	* 支持多态
 7. 抽象方法没有内容，只是为了标记出多态存在。
 8. 必须实现所有的抽象的方法。
-9. 
+9.
 
 #### 9.构造器与垃圾收集器
 
@@ -192,7 +193,3 @@ java.io.file,java.util.Date,java.lang.string,包装类（Integer,Double等）
 
 1. 《Head First 设计模式》
 2. 《极限编程》
-
-
-
-

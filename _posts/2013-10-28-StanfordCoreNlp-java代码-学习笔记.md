@@ -1,6 +1,7 @@
 ---
 layout: post
 category : 笔记
+comments: true
 tags : [NLP, Java, DL]
 ---
 {% include JB/setup %}
@@ -19,23 +20,23 @@ tags : [NLP, Java, DL]
 比如：
 
 	java edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit -file document.txt
-	
+
 API的主要入口是StanfordCoreNLP.process()。
 
 
 #### 1.2 Annotation.class
 
-super: 
+super:
 
     在Java中，有时还会遇到子类中的成员变量或方法与超类（有时也称父类）中的成员变量或方法同名，因为子类中的成员变量或方法名优先级高，所以子类中的同名成员变量和方法就隐藏了超类的成员变量或方法，但是我们如果想要使用超类中的这个成员变量或方法，此使就需要用到super，请看下面的类。
 
 final：
-	
-	根据程序上下文环境，Java关键字final有“这是无法改变的”或者“终态的”含义，它可以修饰非抽象类、非抽象类成员方法和变量。你可能出于两种理解而需要阻止改变：设计或效率。 
-	final类不能被继承，没有子类，final类中的方法默认是final的。 
-	final方法不能被子类的方法覆盖，但可以被继承。 
-	final成员变量表示常量，只能被赋值一次，赋值后值不再改变。 
-	final不能用于修饰构造方法。 
+
+	根据程序上下文环境，Java关键字final有“这是无法改变的”或者“终态的”含义，它可以修饰非抽象类、非抽象类成员方法和变量。你可能出于两种理解而需要阻止改变：设计或效率。
+	final类不能被继承，没有子类，final类中的方法默认是final的。
+	final方法不能被子类的方法覆盖，但可以被继承。
+	final成员变量表示常量，只能被赋值一次，赋值后值不再改变。
+	final不能用于修饰构造方法。
 
 #####注释
 
@@ -49,9 +50,9 @@ final：
   public Annotation(String text)  `构造函数`
 
   public String toString()  `覆盖copy`
-  
+
   public Annotation(List<CoreMap> sentences) `构造函数`
-   
+
 
 ### 2. edu.stanford.nlp.sentiment
 
@@ -70,6 +71,3 @@ final：
 ### 3. edu.stanford.nlp.rnn
 
 #### 3.1 RNNCoreAnnotations.java
-
-
-
