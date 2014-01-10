@@ -4,8 +4,8 @@ title:            Scott Ni
 # disqus_shortname: ScottNi
 # Comment out url when working locally to resolve base urls correctly
 
-# url: http://nipengmath.github.io/
-
+url: http://nipengmath.github.io/
+# url: index.html
 img_url: /images/
 
 # duoshuo comments
