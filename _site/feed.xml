@@ -2,26 +2,160 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Scott Ni</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="index.html/feed.xml" />
-<link rel="alternate" type="text/html" href="index.html" />
-<updated>2014-01-10T11:13:27+08:00</updated>
-<id>index.html/</id>
+<link rel="self" type="application/atom+xml" href="http://nipengmath.github.io//feed.xml" />
+<link rel="alternate" type="text/html" href="http://nipengmath.github.io/" />
+<updated>2014-01-23T14:46:36+08:00</updated>
+<id>http://nipengmath.github.io//</id>
 <author>
   <name>Ni Peng</name>
-  <uri>index.html/</uri>
+  <uri>http://nipengmath.github.io//</uri>
   <email>nipengmath@gmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[熵]]></title>
+  <link>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/%E7%86%B5</link>
+  <id>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/熵</id>
+  <published>2014-01-13T00:00:00+08:00</published>
+  <updated>2014-01-13T00:00:00+08:00</updated>
+  <author>
+    <name>Ni Peng</name>
+    <uri>http://nipengmath.github.io/</uri>
+    <email>nipengmath@gmail.com</email>
+  </author>
+  <content type="html">&lt;h1&gt;熵是神马&lt;/h1&gt;
+
+&lt;h2&gt;什么是熵？&lt;/h2&gt;
+
+&lt;h3&gt;熵表示事物不确定性的大小。&lt;/h3&gt;
+
+&lt;p&gt;Q: 假设你有一个正常的色子，掷一次色子，得到6点的概率是什么？&lt;/p&gt;
+
+&lt;p&gt;A: 1/6.这种情况下，有可能出现1点，也有可能出现6点。1点和6点的可能性是一样的。此时，不确定性最大，也就是熵最大。&lt;/p&gt;
+
+&lt;p&gt;Q: 那什么时候熵最小呢？&lt;/p&gt;
+
+&lt;p&gt;A: 不确定性最小的时候。&lt;/p&gt;
+
+&lt;p&gt;Q: 什么情况下不确定性最小？&lt;/p&gt;
+
+&lt;p&gt;A: 假如我有一个灌了铅的色子，每次掷色子的时候，一定出现6点。这种情况下，结果是确定的，也就是不确定性最小，熵值最小。&lt;/p&gt;
+
+&lt;p&gt;明白了，熵值和色子的状态有关系。正常的色子有6个状态，每种状态都有可能。灌了铅的色子只有一个状态，6点。&lt;/p&gt;
+
+&lt;h3&gt;熵值表示信息量的大小&lt;/h3&gt;
+
+&lt;p&gt;Q: 假如有人知道一条消息，100元卖给你。你会买吗？&lt;/p&gt;
+
+&lt;p&gt;A: 如果他知道昨天某支股票的价格，把这条消息买个你，你会买吗？当然不会，昨天的数据是已经确定的（熵值很小），任何人都能查到。&lt;/p&gt;
+
+&lt;p&gt;如果他知道明天某只股票的走势，会涨还是会跌，你会买这条消息吗？很有可能会，因为对现在来说，结果不确定（熵值很大），如果我知道了，会带来很大利润。&lt;/p&gt;
+
+&lt;h2&gt;熵有什么用&lt;/h2&gt;
+
+&lt;p&gt;几个例子&lt;/p&gt;
+
+&lt;h3&gt;1.称硬币&lt;/h3&gt;
+
+&lt;p&gt;假设有5个硬币：1，2，3，4，5.其中一个是假的，比其他硬币都轻。有一个天平，每次可以比较两堆硬币，得到的结果有三种：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;左边重&lt;/li&gt;
+&lt;li&gt;右边重&lt;/li&gt;
+&lt;li&gt;两边同样重&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Q：至少称几次才能找出假硬币？&lt;/p&gt;
+
+&lt;p&gt;A：两次。&lt;/p&gt;
+
+&lt;p&gt;第一次&lt;code&gt;比较&lt;/code&gt;&quot;1,2&quot;和“3,4”.&lt;/p&gt;
+
+&lt;p&gt;如果一样重，5是假的。&lt;/p&gt;
+
+&lt;p&gt;如果左边轻，&lt;code&gt;比较&lt;/code&gt;1和2。左边轻，1是假的。右边轻，2是假的。&lt;/p&gt;
+
+&lt;p&gt;如果右边轻，&lt;code&gt;比较&lt;/code&gt;3和4。左边轻，3是假的。右边轻，4是假的。&lt;/p&gt;
+
+&lt;h4&gt;和熵有什么关系？&lt;/h4&gt;
+
+&lt;p&gt;X表示假硬币可能的取值，X={1,2,3,4,5}&lt;/p&gt;
+
+&lt;p&gt;Y表示天平可能的结果，Y={1,2,3},1表示左边重，2表示右边重，3表示同样重。&lt;/p&gt;
+
+&lt;p&gt;假设用天平比较n次，为了找出假硬币，就要覆盖X的所有取值可能。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    3^n &amp;gt;= 5
+    n &amp;gt;= ln(5) / ln(3)
+    n &amp;gt;= 1.46
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;因此至少比较2次。&lt;/p&gt;
+
+&lt;p&gt;天平的表达能力是ln(3), 假硬币的不确定度是ln(5).
+当一个变量（假硬币的状态）被另一个变量（天平的状态）表示的时候，这种&lt;code&gt;不确定度&lt;/code&gt;，就是变量（假硬币状态）的&lt;code&gt;熵&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;熵和变量的取值范围有关系。&lt;/p&gt;
+
+&lt;h3&gt;2. 十进制，二进制&lt;/h3&gt;
+
+&lt;p&gt;Q: 将100用二进制表示，至少需要几位？&lt;/p&gt;
+
+&lt;p&gt;A: 7位&lt;/p&gt;
+
+&lt;p&gt;熟悉二进制的同学，可能很快写出100的二进制表示：1100100&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;为什么是7位？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;二进制每一位两个状态0或1，假设需要n位，参考例2，可以简单计算一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    2^n &amp;gt;= 100
+    n &amp;gt;= ln(100) / ln(2)
+    n &amp;gt;= 6.64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Q:用八进制表示100，至少需要几位&lt;/p&gt;
+
+&lt;p&gt;A:3位。八进制每一位有8个状态，表示能力更强。ln(100) / ln(8) = 2.21。&lt;/p&gt;
+
+&lt;p&gt;Q:那16进制呢？&lt;/p&gt;
+
+&lt;p&gt;A:2位。因为ln(100) / ln(16) = 1.66。&lt;/p&gt;
+
+&lt;h3&gt;3.韦小宝的色子&lt;/h3&gt;
+
+&lt;p&gt;韦小宝有一个动了手脚的色子，出现6点的概率为1/2，其他点数的概率不知道。那么猜测色子出现各个点数的概率，最可能为下面选项中的哪个？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A. 6点的概率1/2, 1点的概率1/2, 其他点数为0
+B. 6点的概率1/2, 3点，4点概率各为1/4, 其他点数为0
+C. 6点的概率1/2, 1点，2点，…, 5点的概率相同，各为1/10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最有可能的选项是C.&lt;/p&gt;
+
+&lt;p&gt;因为，只知道6点的概率是1/2，其他点的概率不知道。在未知的情况下，假设出现1点,…,5点的可能性相同是很自然的。&lt;/p&gt;
+
+&lt;p&gt;在满足已知条件的基础上，对未知情况不做任何假设。这就是传说中的&lt;code&gt;最大熵模型&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2&gt;结束语&lt;/h2&gt;
+
+&lt;p&gt;生活中很多自然现象都能用熵来描述。事物总是在满足最小限制条件下，追求最大的自由度。具体表现出来就是杂乱无章。比如打碎了一块玻璃，很自然的情况是玻璃碎了一地，毫无规律可言。洒落一盒火柴，不可能还是整整齐齐落在地上，而是完全散开。这种杂乱程度可以用熵来表示。如果用数学模型来描述这种现象，就是例4提到的最大熵模型。&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/%E7%86%B5&quot;&gt;熵&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on January 13, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[2013年个人总结]]></title>
-  <link>index.html/%E6%80%BB%E7%BB%93/2013%E5%B9%B4%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93</link>
-  <id>index.html/%E6%80%BB%E7%BB%93/2013年个人总结</id>
+  <link>http://nipengmath.github.io//%E6%80%BB%E7%BB%93/2013%E5%B9%B4%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93</link>
+  <id>http://nipengmath.github.io//%E6%80%BB%E7%BB%93/2013年个人总结</id>
   <published>2014-01-03T00:00:00+08:00</published>
   <updated>2014-01-03T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;h3&gt;一年工作总结安排&lt;/h3&gt;
@@ -70,19 +204,19 @@
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E6%80%BB%E7%BB%93/2013%E5%B9%B4%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93&quot;&gt;2013年个人总结&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on January 03, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E6%80%BB%E7%BB%93/2013%E5%B9%B4%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93&quot;&gt;2013年个人总结&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on January 03, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Mlapp笔记]]></title>
-  <link>index.html/%E7%AC%94%E8%AE%B0/MLAPP%E7%AC%94%E8%AE%B0</link>
-  <id>index.html/%E7%AC%94%E8%AE%B0/MLAPP笔记</id>
+  <link>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/MLAPP%E7%AC%94%E8%AE%B0</link>
+  <id>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/MLAPP笔记</id>
   <published>2013-11-20T00:00:00+08:00</published>
   <updated>2013-11-20T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;h2&gt;MLAPP笔记&lt;/h2&gt;
@@ -121,19 +255,19 @@ Berkhin 2006 e-commerce cluster users&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E7%AC%94%E8%AE%B0/MLAPP%E7%AC%94%E8%AE%B0&quot;&gt;Mlapp笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on November 20, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/MLAPP%E7%AC%94%E8%AE%B0&quot;&gt;Mlapp笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on November 20, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Progit笔记]]></title>
-  <link>index.html/%E7%AC%94%E8%AE%B0/ProGit%E7%AC%94%E8%AE%B0</link>
-  <id>index.html/%E7%AC%94%E8%AE%B0/ProGit笔记</id>
+  <link>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/ProGit%E7%AC%94%E8%AE%B0</link>
+  <id>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/ProGit笔记</id>
   <published>2013-11-18T00:00:00+08:00</published>
   <updated>2013-11-18T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;h2&gt;《Progit中文版》&lt;/h2&gt;
@@ -341,19 +475,19 @@ git bisect good
 
 &lt;h3&gt;9.Git内部原理&lt;/h3&gt;
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E7%AC%94%E8%AE%B0/ProGit%E7%AC%94%E8%AE%B0&quot;&gt;Progit笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on November 18, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/ProGit%E7%AC%94%E8%AE%B0&quot;&gt;Progit笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on November 18, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Stanfordcorenlp Java代码 学习笔记]]></title>
-  <link>index.html/%E7%AC%94%E8%AE%B0/StanfordCoreNlp-java%E4%BB%A3%E7%A0%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0</link>
-  <id>index.html/%E7%AC%94%E8%AE%B0/StanfordCoreNlp-java代码-学习笔记</id>
+  <link>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/StanfordCoreNlp-java%E4%BB%A3%E7%A0%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0</link>
+  <id>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/StanfordCoreNlp-java代码-学习笔记</id>
   <published>2013-10-28T00:00:00+08:00</published>
   <updated>2013-10-28T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;h2&gt;stanford-corenlp-3.2.0b.jar&lt;/h2&gt;
@@ -421,19 +555,19 @@ final不能用于修饰构造方法。
 
 &lt;h4&gt;3.1 RNNCoreAnnotations.java&lt;/h4&gt;
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E7%AC%94%E8%AE%B0/StanfordCoreNlp-java%E4%BB%A3%E7%A0%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&quot;&gt;Stanfordcorenlp Java代码 学习笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/StanfordCoreNlp-java%E4%BB%A3%E7%A0%81-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&quot;&gt;Stanfordcorenlp Java代码 学习笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Headfirstjava 学习笔记]]></title>
-  <link>index.html/%E7%AC%94%E8%AE%B0/HeadFirstJava-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0</link>
-  <id>index.html/%E7%AC%94%E8%AE%B0/HeadFirstJava-学习笔记</id>
+  <link>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/HeadFirstJava-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0</link>
+  <id>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/HeadFirstJava-学习笔记</id>
   <published>2013-10-28T00:00:00+08:00</published>
   <updated>2013-10-28T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;h4&gt;1. 基本概念&lt;/h4&gt;
@@ -679,19 +813,19 @@ this.show((super)o) &amp;gt; super.show((super)o)
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E7%AC%94%E8%AE%B0/HeadFirstJava-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&quot;&gt;Headfirstjava 学习笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/HeadFirstJava-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&quot;&gt;Headfirstjava 学习笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Dl For Nlp]]></title>
-  <link>index.html/%E7%AC%94%E8%AE%B0/DL-for-NLP</link>
-  <id>index.html/%E7%AC%94%E8%AE%B0/DL-for-NLP</id>
+  <link>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/DL-for-NLP</link>
+  <id>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/DL-for-NLP</id>
   <published>2013-10-18T00:00:00+08:00</published>
   <updated>2013-10-18T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;h2&gt;Deep Learning for NLP(without Magic)笔记&lt;/h2&gt;
@@ -778,7 +912,7 @@ this.show((super)o) &amp;gt; super.show((super)o)
 
 &lt;h5&gt;从Maxent分类器到神经网络&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&quot;index.html/images/1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nipengmath.github.io//images/1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;h5&gt;单个神经元计算：&lt;/h5&gt;
 
@@ -1402,19 +1536,19 @@ http://www.fit.vutbr.cz/~imikolov/rnnlm
 
 &lt;h4&gt;3.4 讨论：局限性，优势，未来研究方向&lt;/h4&gt;
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E7%AC%94%E8%AE%B0/DL-for-NLP&quot;&gt;Dl For Nlp&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on October 18, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/DL-for-NLP&quot;&gt;Dl For Nlp&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on October 18, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[情感分析 基础理论]]></title>
-  <link>index.html/%E7%AC%94%E8%AE%B0/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA</link>
-  <id>index.html/%E7%AC%94%E8%AE%B0/情感分析-基础理论</id>
+  <link>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA</link>
+  <id>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/情感分析-基础理论</id>
   <published>2013-10-17T00:00:00+08:00</published>
   <updated>2013-10-17T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;&lt;strong&gt;Ad目前工作&lt;/strong&gt;&lt;/p&gt;
@@ -1610,19 +1744,19 @@ http://www.fit.vutbr.cz/~imikolov/rnnlm
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E7%AC%94%E8%AE%B0/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA&quot;&gt;情感分析 基础理论&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on October 17, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA&quot;&gt;情感分析 基础理论&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on October 17, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Deeplearning学习笔记]]></title>
-  <link>index.html/%E7%AC%94%E8%AE%B0/DeepLearning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0</link>
-  <id>index.html/%E7%AC%94%E8%AE%B0/DeepLearning学习笔记</id>
+  <link>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/DeepLearning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0</link>
+  <id>http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/DeepLearning学习笔记</id>
   <published>2013-10-10T00:00:00+08:00</published>
   <updated>2013-10-10T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;h2&gt;词向量&lt;/h2&gt;
@@ -1634,19 +1768,19 @@ http://www.fit.vutbr.cz/~imikolov/rnnlm
 4. 《A scalable hierarchical distributed language model》Hinton.2008
 5. 《Statistical Language Models based on Neural Networks》&lt;a href=&quot;http://www.fit.vutbr.cz/~imikolov/rnnlm/&quot;&gt;http://www.fit.vutbr.cz/~imikolov/rnnlm/&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E7%AC%94%E8%AE%B0/DeepLearning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&quot;&gt;Deeplearning学习笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on October 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E7%AC%94%E8%AE%B0/DeepLearning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&quot;&gt;Deeplearning学习笔记&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on October 10, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[第一篇博客]]></title>
-  <link>index.html/%E6%9D%82%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2</link>
-  <id>index.html/%E6%9D%82%E8%AE%B0/第一篇博客</id>
+  <link>http://nipengmath.github.io//%E6%9D%82%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2</link>
+  <id>http://nipengmath.github.io//%E6%9D%82%E8%AE%B0/第一篇博客</id>
   <published>2013-09-27T00:00:00+08:00</published>
   <updated>2013-09-27T00:00:00+08:00</updated>
   <author>
     <name>Ni Peng</name>
-    <uri>index.html</uri>
+    <uri>http://nipengmath.github.io/</uri>
     <email>nipengmath@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;今天终于有了属于自己开发的一个博客网站。
@@ -1669,7 +1803,7 @@ http://www.fit.vutbr.cz/~imikolov/rnnlm
 &lt;p&gt;努力吧，
 为了自己！&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;index.html/%E6%9D%82%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2&quot;&gt;第一篇博客&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;index.html&quot;&gt;Scott Ni&lt;/a&gt; on September 27, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://nipengmath.github.io//%E6%9D%82%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2&quot;&gt;第一篇博客&lt;/a&gt; was originally published by Ni Peng at &lt;a href=&quot;http://nipengmath.github.io/&quot;&gt;Scott Ni&lt;/a&gt; on September 27, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
